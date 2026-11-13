@@ -8,8 +8,6 @@
 4. Ouvrir les liens d’inscription et de récupération pour décrire les écrans et relever les domaines de destination. Noter chaque action et son résultat dans le journal.
 
 
-Le but est de comprendre les écrans disponibles, les domaines utilisés et les protections visibles. Les points qui nécessitent une vérification côté serveur seront notés dans le journal.
-
 ## Choix des CWE
 
 Deux pistes sont envisagées pour le moment, CWE-287 (authentification incorrecte) et CWE-352 (CSRF). Le choix reste à discuter avec le groupe selon les fonctionnalités accessibles. Pour les CSRF, il faudra d’abord repérer une action sensible et comprendre les protections attendues.
