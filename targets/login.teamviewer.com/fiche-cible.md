@@ -8,7 +8,7 @@ La console `https://login.teamviewer.com` figure dans le périmètre. Ma partie 
 
 Les essais doivent être non destructifs. Le déni de service et les interventions sur l’infrastructure sont interdits. La politique demande de s’abstenir d’outils automatisés et de limiter les requêtes. Aucun plafond numérique ni en-tête d’identification obligatoire n’a été relevé dans la page consultée. Les données des utilisateurs doivent être préservées. Une découverte doit être signalée sous 24 heures, exclusivement sur YesWeHack.
 
-Les CSRF de faible gravité sur la connexion, l’énumération d’utilisateurs et les défauts de limitation des tentatives figurent parmi les exclusions de récompense. Cette liste est partielle. La classification « Critical » de l’actif ne détermine pas la gravité d’une éventuelle faille. [Programme officiel, consulté le 13 novembre 2026](https://yeswehack.com/programs/teamviewer-bounty-program)
+Les CSRF de faible gravité sur la connexion, l’énumération d’utilisateurs et les défauts de limitation des tentatives figurent parmi les exclusions de récompense. Cette liste est partielle. La classification « Critical » de l’actif ne détermine pas la gravité d’une éventuelle faille.
 
 ## Technologies
 
