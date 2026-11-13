@@ -2,8 +2,6 @@
 
 ## Préparation et premières observations
 
-Horaires de la séance à compléter, en heure de Paris.
-
 Cette première étape porte sur les documents du projet et la page `https://login.teamviewer.com/LogOn` dans un navigateur, sans authentification.
 
 ### Avancement
