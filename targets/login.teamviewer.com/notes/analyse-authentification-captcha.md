@@ -42,3 +42,11 @@ La comparaison repose sur des requêtes historiques de contextes différents, po
 - Ne pas publier les valeurs de `Cookie`, `Set-Cookie`, `Password`, `ssoVerificationToken`, `invisiblecaptcha-response` ni de jetons anti-bot.
 - Révoquer les sessions et renouveler les identifiants précédemment exposés lorsque cela s'applique.
 - Ne réaliser des tests actifs supplémentaires que sur un environnement et selon un périmètre explicitement autorisés.
+
+## Observation complémentaire — Rejet explicite du CAPTCHA
+
+Dans une autre réponse déjà capturée le **14 novembre 2026**, la route `POST /LogOn/Authenticate` renvoie **HTTP 200** avec `"s":0`, un champ `err.CaptchaError` et le message « Cochez la case pour prouver que vous êtes un être humain. » Le champ `"c":true` est également présent, sans signification interne établie.
+
+**Interprétation :** cette tentative a été rejetée avec un motif lié au CAPTCHA. La présence d'un jeton dans la requête ne démontre pas sa validation. Cette réponse ne prouve ni l'ordre dans lequel le serveur effectue ses vérifications, ni un contournement du CAPTCHA, du SSO ou des identifiants.
+
+**Verdict complémentaire :** aucune vulnérabilité démontrée. Cette observation provient des captures déjà collectées ; aucun nouveau test actif n'a été effectué pour la documenter. Les valeurs de cookies, jetons et identifiants sont volontairement exclues.
