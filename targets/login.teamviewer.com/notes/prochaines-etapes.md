@@ -5,7 +5,7 @@
 1. Relire le périmètre et les règles avant les vérifications.
 2. Confirmer avec le groupe les deux ou trois CWE retenues et la répartition des domaines.
 3. Ouvrir `/LogOn` et enregistrer une capture datée de la page dans un dossier `evidences/` associé à cette cible.
-4. Ouvrir les liens d’inscription et de récupération pour décrire les écrans et relever les domaines de destination. Noter chaque action et son résultat dans le journal.
+4. Le parcours d’inscription et le repérage après connexion sont réalisés : voir [la cartographie authentifiée](cartographie-authentifiee.md). Le parcours de récupération a ensuite été observé jusqu’à la confirmation du changement de mot de passe. Voir le journal et [le bilan des vérifications](cookies-et-bilan.md).
 
 
 ## Choix des CWE
@@ -25,3 +25,8 @@ Chaque vérification aura un objectif, des conditions de départ, un résultat a
 | Impact business | Conséquences étayées des constats, hypothèses explicitement signalées |
 | Feuille de route de remédiation | Mesures reliées aux constats et à leur priorité |
 | Retour d’expérience | Difficultés, coordination et enseignements tirés du projet |
+
+
+## Contrôle CSRF réalisé
+
+La comparaison du jeton d’origine et d’un jeton invalide dans Burp est documentée dans [la fiche du test](essai-jeton-invalide.md#comparaison-manuelle-dans-burp-repeater). Résultat : défense observée sur la sauvegarde du profil, aucune faille démontrée. Intégrer ce résultat et ses limites au rapport ; ne pas répéter ce même essai sans nouvel objectif.

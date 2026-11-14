@@ -18,11 +18,11 @@ Les CSRF de faible gravité sur la connexion, l’énumération d’utilisateurs
 | Serveur et framework | À identifier |
 | CDN et WAF | À identifier |
 | Authentification | Champs e-mail et mot de passe visibles, texte proposant une authentification unique |
-| Mécanisme de session et API | À examiner |
+| Mécanisme de session et API | Cookies et requête de sauvegarde du profil observés ; voir les notes |
 
 ## Comptes de test
 
-Compte de test personnel à prévoir pour la suite. Dans les notes, les comptes seront désignés par des alias comme « compte A ». Les mots de passe seront conservés dans un gestionnaire de mots de passe.
+Un compte de test gratuit, désigné « compte A », a été créé et activé. Les valeurs des mots de passe, cookies, jetons et liens de récupération sont exclues du dépôt.
 
 ## Surface observée
 
@@ -42,3 +42,9 @@ Les liens `#lost-password` et `#register` donnent accès à des parties de l’i
 - Identifier les parcours disponibles et leurs domaines de destination.
 - Noter les protections rencontrées avec un compte de test.
 - Choisir les deux ou trois CWE avec le groupe.
+
+## État des vérifications
+
+Les parcours authentifiés, la récupération du mot de passe et les cookies ont été observés. Le test du jeton invalide sur la sauvegarde du profil a obtenu HTTP 403, avec un nom inchangé. Aucune vulnérabilité confirmée. Voir [le bilan](notes/cookies-et-bilan.md) et [la fiche de test](notes/essai-jeton-invalide.md).
+
+Source du périmètre : [programme officiel TeamViewer sur YesWeHack](https://yeswehack.com/programs/teamviewer-bounty-program).
