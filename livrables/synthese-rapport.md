@@ -74,3 +74,13 @@ Aucune correction urgente d’une vulnérabilité confirmée n’est proposée.
 La principale difficulté a été la qualité de la preuve : une substitution configurée ne prouve pas qu’elle a été transmise, et une réponse 200 ne prouve pas le succès métier. Le changement de nom réversible, le contrôle de l’état et le rejeu positif ont permis d’améliorer l’interprétation.
 
 L’assistance IA a aidé à préparer les manipulations, lire les réponses et structurer les notes. Elle a aussi rencontré des limites de contrôle de l’interface et a dû corriger des interprétations trop rapides du message JSON. La validation humaine des captures et du comportement réel reste indispensable. Le bilan distingue ainsi les résultats observés, les hypothèses et les tests non exécutés.
+
+## Complément d’investigation sur le formulaire public
+
+La réponse normale de /LogOn dans Safari est HTTP 200. HSTS, Cache-Control: no-cache, no-store, Referrer-Policy, X-Content-Type-Options: nosniff et X-Frame-Options: SAMEORIGIN ont été relevés. La CSP complète contient default-src 'none' et autorise 'unsafe-inline' dans script-src. Les directives form-action, base-uri et frame-ancestors n’apparaissent pas dans la politique capturée. SAMEORIGIN est présent séparément. Le 403 d’un accès direct reste inexpliqué.
+
+Le segment d’ouverture du formulaire contient 42 requêtes HTTPS, dont deux POST vers reCAPTCHA. Aucun POST vers login.teamviewer.com ne figure dans ce segment. Le relevé ne permet pas de qualifier les valeurs transmises ni de conclure à une fuite.
+
+La revue passive est terminée pour la capture disponible. La portée exacte de la révocation, l’usage unique du lien de récupération et le comportement des parcours MFA et SSO restent à établir. Le rétablissement final du nom et la déconnexion restent à confirmer.
+
+[Registre des preuves HTTP et des sessions](registre-preuves-login.md). Le registre distingue les preuves directes du HAR et les étapes de révocation rapportées dans le journal.

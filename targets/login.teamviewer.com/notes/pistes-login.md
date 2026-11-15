@@ -112,3 +112,22 @@ Le segment de l’export Safari contient 42 requêtes HTTPS. TeamViewer reçoit 
 - POST 2 vers reCAPTCHA : HTTP 200, Cookie visible : False, Referer visible : True, corps textuel enregistré : True.
 
 Les valeurs des en-têtes et des corps ont été écartées du relevé. Une absence dans le HAR ne démontre pas une absence sur le réseau. Aucun identifiant n’a été saisi pendant cette capture.
+
+### Observation en direct : accès à la liste des sessions
+
+Une navigation ordinaire dans Safari vers `/nav/profile/active-logins` a conduit à `/LogOn/` et au formulaire « S’identifier ». La liste des sessions n’a pas été affichée dans cette fenêtre. Ce résultat documente la redirection dans cet état du navigateur. Il ne permet pas de dater la fin de session ni d’en attribuer la cause à une révocation ou à un retrait de confiance. Récupération et MFA : verdicts inchangés.
+
+### Comparaison des deux menus après reconnexion
+
+- **Connexions actives** (`/nav/profile/active-logins`) affiche « Session actuelle ». Il s’agit d’un accès déjà ouvert.
+- **Appareils de confiance** (`/nav/profile/trust-management`) gère les appareils et adresses IP de confiance. L’interface indique qu’après retrait d’une permission, une nouvelle demande d’autorisation par e-mail est prévue lors d’une tentative ultérieure.
+
+Les deux écrans ont été vérifiés en lecture seule. Le comportement après retrait de la confiance, l’usage unique du lien de récupération et la MFA sur le compte restent indéterminés.
+
+### État de la MFA dans le compte de test
+
+Dans Safari, le menu Sécurité affiche « Activer l’authentification à deux facteurs ». Cela indique que la MFA est proposée et semble inactive sur ce compte au moment du relevé. L’option de récupération à divulgation nulle de connaissance est également proposée. Aucun réglage n’a été modifié. L’application et la récupération de la MFA restent indéterminées.
+
+### Paramètres du navigateur
+
+Le menu « Paramètres navigateur » affiche « Vous n’avez actuellement enregistré aucun paramètre pour ce navigateur ». Cet écran n’affiche aucune durée de session. La durée et le comportement de l’option « Maintenir la connexion » restent indéterminés.

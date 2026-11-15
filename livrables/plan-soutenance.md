@@ -13,6 +13,17 @@ Trame de 15 minutes, dont les 5 dernières consacrées à l’IA, suivies des qu
 | 10:00–12:00 | IA dans notre travail | Aide à la structuration et aux étapes ; limites de l’interface ; interprétations corrigées grâce aux observations. |
 | 12:00–15:00 | Évolution du métier | Automatisation de tâches répétitives, revue humaine du périmètre et de l’impact ; injection de prompt comme surface à discuter, non testée sur cette cible. |
 
+## Diapositive — Protections du formulaire de connexion
+
+À intégrer au créneau « Méthode et choix » (45 secondes).
+
+- **Safari, HTTP 200** — HSTS, CSP et X-Frame-Options: SAMEORIGIN observés sur /LogOn.
+- **CSP complète** — form-action, base-uri et frame-ancestors absentes de la politique capturée. SAMEORIGIN est présent dans un en-tête distinct.
+- **Avant saisie** — 42 requêtes HTTPS observées, dont deux POST vers reCAPTCHA (401 puis 200). Aucun POST vers la console dans ce segment.
+- **Verdict** — configuration documentée. Aucune fuite ni vulnérabilité démontrée. La cause du 403 obtenu en accès direct reste inconnue.
+
+À l’oral : « On a distingué la page réellement affichée dans Safari de la réponse de refus obtenue en accès direct avant d’attribuer les en-têtes au formulaire. »
+
 ## Fil conducteur oral
 
 « Notre objectif était d’évaluer des parcours précis avec un compte maîtrisé. Nous n’avons pas démontré de faille. Notre résultat le plus solide est une comparaison : le jeton valide permet la modification, une valeur invalide ou l’absence de l’en-tête la fait rejeter. Nous avons contrôlé le nom réellement affiché, car le JSON de la réponse positive contenait paradoxalement un message d’erreur. »
@@ -29,3 +40,11 @@ Trame de 15 minutes, dont les 5 dernières consacrées à l’IA, suivies des qu
 ## Préparation finale
 
 Répartir les temps entre membres, intégrer les autres cibles, vérifier les règles du programme et répéter au chronomètre. Préférer une démonstration enregistrée ou des preuves expurgées à une modification en direct pendant l’oral. Aucun cookie, jeton ou mot de passe ne doit apparaître sur les supports. Ne pas présenter le nettoyage final comme terminé sans confirmation.
+
+## Démonstration sur preuves — 60 secondes
+
+- **0–20 s** — Montrer le statut 200 et le message générique, puis l’état visible du profil. La réponse seule laissait le résultat ambigu.
+- **20–40 s** — Montrer les deux 403 et le nom inchangé. Présenter le contrôle positif suivant pour expliquer pourquoi une session expirée explique mal le second refus.
+- **40–60 s** — Formuler le verdict : rejet observé pour les deux variantes sur la sauvegarde du profil. La portée s’arrête aux cas observés.
+
+[Tableau des preuves à projeter](registre-preuves-login.md#http-03-à-http-06--effet-sur-le-profil)
